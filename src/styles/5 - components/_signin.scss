@@ -1,0 +1,163 @@
+.signin-content {
+  margin: auto;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.signin {
+  border: 1px solid $border-color-focus;
+  display: flex;
+  justify-content: center;
+  padding: $l-size;
+  padding-top: $m-size;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    padding: $m-size;
+  }
+}
+
+.signin-main {
+  width: 350px;
+  height: auto;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.signin-provider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signin-provider-button {
+  width: 100%;
+  margin: $s-size;
+}
+
+.signin-button {
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.provider-facebook {
+  @extend .button;
+  background: $color-facebook;
+  color: $white;
+  border: 1px solid $color-facebook;
+  
+  &:hover {
+    background: $color-facebook-hover;
+    border: 1px solid $color-facebook;
+  }
+}
+
+.provider-google {
+  @extend .button;
+  background: $black;
+  color: $paragraph-color-01;
+  border: 1px solid $border-color-focus;
+
+  &:hover {
+    background: $border-color;
+    border: 1px solid $border-color;
+  }
+}
+
+.signin-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 $xl-size;
+
+  h6 {
+    background: $background-color;
+    padding: $s-size;
+    z-index: 1;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 30%;
+    width: 1px;
+    background: $border-color;
+
+    @media (max-width: $mobile) {
+      width: 50%;
+      height: 1px;
+    }
+  }
+
+  &:before {
+    top: 25%;
+
+    @media (max-width: $mobile) {
+      top: 50%;
+      left: 0;
+    }
+  }
+
+  &:after {
+    bottom: 25%;
+
+    @media (max-width: $mobile) {
+      right: 0;
+      bottom: 50%;
+    }
+  }
+}
+
+.signin-action {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+
+    a {
+      margin-top: $m-size;
+      margin-bottom: 0;
+      text-align: center;
+      order: 2;
+    }
+
+    button {
+      order: 1;
+    }
+  }
+}
+
+.signin-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $s-size;
+  margin: auto;
+  background: $background-color-01;
+  border: 1px solid $border-color-focus;
+  border-top: none;
+}
+
+.signin-info {
+  margin-right: $l-size;
+}
+
+.forgot_password {
+  width: 50%;
+  margin: auto;
+  
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: $s-size;
+  } 
+}

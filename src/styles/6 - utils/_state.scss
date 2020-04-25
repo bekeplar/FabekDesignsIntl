@@ -1,0 +1,50 @@
+// 
+// STATE ---------
+//
+
+.is-active-link {
+  font-weight: bold;
+  color: green;
+}
+
+.is-basket-open {
+  overflow-y: hidden;
+}
+
+.is-selected-payment {
+  opacity: 1;
+}
+
+.is-basket-open .basket {
+  transform: translateX(0);
+}
+
+.is-open-filters {
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: map-get($z-index, 'filter');
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.is-img-loading {
+  opacity: 0;
+}
+
+.is-img-loaded {
+  animation: fadeIn .3s ease;
+  opacity: 1;
+}
+
+.is-open-recent-search .searchbar-recent {
+  display: flex;
+  flex-direction: column;
+}

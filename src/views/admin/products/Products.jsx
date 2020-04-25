@@ -1,0 +1,91 @@
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectFilter } from 'selectors/selector';
+import Header from 'views/home/Header';
+import ProductList from 'components/product/ProductList';
+import Boundary from 'components/ui/Boundary';
+import ProductAppliedFilters from 'components/product/ProductAppliedFilters';
+import ProductItem from './ProductItem';
+
+const Products = (props) => {
+  const {
+    productsLength, filter, isLoading, filteredProducts, requestStatus
+  } = useSelector(state => ({
+    productsLength: state.products.items.length,
+    filter: state.filter,
+    isLoading: state.app.loading,
+    filteredProducts: selectFilter(state.products.items, state.filter),
+    requestStatus: state.app.requestStatus
+  }));
+  const dispatch = useDispatch();
+
+  const onClickAddProduct = () => {
+    props.history.push('/dashboard/add');
+  };
+
+  return (
+    <Boundary>
+      <div className="product-admin-header">
+        <h2 className="product-admin-header-title">Products</h2>
+        <Header
+            dispatch={dispatch}
+            filter={filter}
+            filteredProducts={filteredProducts}
+            isLoading={isLoading}
+            productsLength={productsLength}
+        />
+        &nbsp;&nbsp;
+        <button
+            className="button button-small"
+            onClick={onClickAddProduct}
+        >
+          Add New Product
+        </button>
+      </div>
+      <ProductList
+          dispatch={dispatch}
+          filteredProducts={filteredProducts}
+          isLoading={isLoading}
+          productsLength={productsLength}
+          requestStatus={requestStatus}
+      >
+        <ProductAppliedFilters filter={filter}/>
+          {filteredProducts.length > 0 && (
+            <div className="grid grid-product grid-count-6">
+              <div className="grid-col" />
+              <div className="grid-col">
+                <h5>Name</h5>
+              </div>
+              <div className="grid-col">
+                <h5>Brand</h5>
+              </div>
+              <div className="grid-col">
+                <h5>Price</h5>
+              </div>
+              <div className="grid-col">
+                <h5>Date Added</h5>
+              </div>
+              <div className="grid-col">
+                <h5>Qty</h5>
+              </div>
+            </div>
+          )}
+          {filteredProducts.length === 0 ? new Array(10).fill({}).map((product, index) => (
+            <ProductItem
+                key={`product-skeleton ${index}`}
+                product={product}
+            />
+          )) : filteredProducts.map(product => (
+            <ProductItem
+                dispatch={dispatch}
+                key={product.id}
+                product={product}
+            />
+          ))}
+      </ProductList>
+    </Boundary>
+  );
+};
+
+export default withRouter(Products);

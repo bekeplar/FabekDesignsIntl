@@ -1,0 +1,47 @@
+.input-message {
+  display: block;
+  padding: $s-size;
+  color: $red;
+  font-weight: bold;
+}
+
+.input-form {
+  padding: 10px $m-size !important;
+  border: 1px solid $border-color-focus !important;
+  font-size: $font-medium !important;
+  margin-bottom: $s-size;
+}
+
+.signup {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.signup-wrapper {
+  width: 100%;
+  padding: $l-size;
+  padding-top: $m-size;
+  border: 1px solid $border-color-focus;
+
+  @media (max-width: $mobile) {
+    padding: $m-size;
+  }
+}
+
+.signup-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signup-button {
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}

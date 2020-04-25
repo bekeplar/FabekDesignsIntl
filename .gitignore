@@ -1,0 +1,6 @@
+node_modules/
+.env.prod
+.env.dev
+dist/
+.firebase/
+package-lock.json

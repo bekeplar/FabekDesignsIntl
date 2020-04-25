@@ -1,0 +1,42 @@
+// COLORS ---------
+ 
+
+:root {
+  --nav-bg: #f8f8f8;
+  --nav-bg-scrolled: #fff; 
+  --nav-bg-shadow: 0 5px 10px rgba(0, 0, 0, .02);
+}
+
+$background-color: white;
+$background-color-01: white;
+
+
+// Paragraphs
+$paragraph-color-01: white;
+$paragraph-color-00: #4a4a4a; // base
+$paragraph-color-10:  rgba(108, 108, 250, 0.829);
+$paragraph-color-20: #ece9e9;
+// Heading
+$heading-color: black;
+
+// Border 
+$border-color: #e1e1e1;
+$border-color-focus: #c5c5c5;
+
+// General
+$white: #fff;
+$black: #000;
+$off-black: #303030;
+$red: rgba(247, 45, 45, 0.986);
+$green: rgb(59, 150, 32);
+$yellow: rgb(228, 165, 31);
+
+// Buttons
+$button-color:  rgb(19, 84, 182);
+$button-hover: lighten($button-color, 10%);
+
+// Social
+$color-facebook: rgb(19, 84, 182);
+$color-facebook-hover: rgb(15, 70, 153);
+
+$color-success: #000;
